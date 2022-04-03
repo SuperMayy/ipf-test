@@ -27,7 +27,6 @@ const Home = ({CROSS_DOMAIN}) => {
       localStorage.setItem('longitude',` ${location.coords.longitude}`)
       return location.coords.longitude
     })
-    await fetchLocation(BASE_LOCATION_URL, setLocations, setIsPending, setError)
     if(latitude && longitude === ''){
       throw Error('Please turn on your geolocation')
     }
@@ -53,6 +52,12 @@ const Home = ({CROSS_DOMAIN}) => {
     }
   }
 
+  const handleFetchLocation = () => {
+    if(latitude && longitude !== ''){
+      fetchLocation(BASE_LOCATION_URL, setLocations, setIsPending, setError)
+    }
+  }
+
   useEffect(() => {
     if(!("geolocation" in navigator)){
       onError({
@@ -63,11 +68,15 @@ const Home = ({CROSS_DOMAIN}) => {
     getLocation()
   },[])
 
+  useEffect(() => {
+    handleFetchLocation()
+  }, [longitude, latitude])
+
   return (
     <div className="App">
      {
        isPending ? 
-       <div className='error-message'>{isLoaded &&  error ? <div>{error}</div> 
+       <div className='error-message'>{isLoaded &&  error ? <div>{error} Please refresh your page</div> 
        : <div className='initial-message'>We are retriving your location...</div>}</div> 
        :<Locations locations={locations}/>
      } 

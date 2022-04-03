@@ -12,6 +12,7 @@ export const fetchLocation = (BASE_LOCATION_URL, setLocations, setIsPending, set
       console.log(data)
       })
       .catch(err => {
+        console.log(BASE_LOCATION_URL)
         setError(err.message)
       }); 
 }

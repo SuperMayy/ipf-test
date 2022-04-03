@@ -32,3 +32,13 @@ To run the tests use the command
 
 Builds the app for production to the `build` folder.
 
+
+## Bonus build and run the web app in a docker container
+
+Build Docker image
+
+### `docker build -t ipf-test .`
+
+Run the React App in a container
+
+### `docker run -p 8080:3000 ipf-test`
