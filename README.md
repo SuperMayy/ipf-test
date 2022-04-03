@@ -2,9 +2,12 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app). 
 
-To bypas CORS: https://the-ultimate-api-challenge-v2.herokuapp.com was used
-For routing: react-router-dom version 6 was used
+To bypas CORS: https://the-ultimate-api-challenge-v2.herokuapp.com was used.
+
+For routing: react-router-dom version 6 was used.
+
 For testing: Jest and Enzyme.
+
 Detail of API used: https://www.metaweather.com/api/#locationsearch
 
 ## Available Scripts
