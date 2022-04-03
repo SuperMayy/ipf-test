@@ -1,38 +1,90 @@
+*{
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+body{
+  background-color: #0D1116;
+  color: #D0D0CE;
+}
 .App {
-  text-align: center;
+  display: flex;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.location-container {
+  width: 80%;
+  min-height: 300px;
+  border: 1px solid #D0D0CE;
+  border-radius: 20px;
+  margin: 20px 50px;
+  padding: 20px;
+  background-color: #161C22;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+li {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+.location-name {
+  background-color: #0D1116;
+  padding: 20px;
+  margin: 10px 0px;
+  width: 200%;
+  text-align: center;
+  border-radius: 20px;
+  font-size: 1rem;
+}
+h1.location-instruction {
+  text-align: center;
+  font-size: 2rem;
+  padding-bottom: 20px;
+}
+.weather-card{
+  display: flex;
+  flex-direction: column;
+}
+.weather-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.main-weather-detail {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  max-width: 150px;
+  padding: 10px;
+  border: 1px solid white;
+  border-radius: 20px;
+  margin-bottom: 30px;
+}
+div.main-weather-detail-section {
+  padding-left: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+div.main-weather-detail-section img{
+  padding-top: 20px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.weather-card h1{
+  text-align: center;
+  padding: 50px 0px;
+}
+.navigate-back-button {
+  color: #0D1116;
+  background-color: #D0D0CE;
+  padding: 20px;
+  margin-left: 50px;
+  margin-top: 20px;
+  border: 1px #0D1116 solid;
+  border-radius: 15px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+.error-page h1{
+  text-align: center;
 }

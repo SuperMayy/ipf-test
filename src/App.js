@@ -1,24 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import {BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import Home from './components/pages/Home'
+import Weather from './components/pages/Weather'
+import ErrorPage from './components/pages/ErrorPage'
 
-function App() {
+const App = () => {
+  
+  const CROSS_DOMAIN = 'https://the-ultimate-api-challenge-v2.herokuapp.com'
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" 
+        element={<Home 
+          CROSS_DOMAIN={CROSS_DOMAIN}
+        />}/>
+        <Route path="/weather/:id" 
+        element={<Weather 
+        CROSS_DOMAIN={CROSS_DOMAIN}
+        />}/>
+        <Route path="*" element={<ErrorPage/>}/>
+      </Routes>
+    </Router>
   );
 }
 
