@@ -42,3 +42,5 @@ Build Docker image
 Run the React App in a container
 
 ### `docker run -p 8080:3000 ipf-test`
+
+Open [http://localhost:8080](http://localhost:8080) to view it in your browser.
